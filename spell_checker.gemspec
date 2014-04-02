@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'multi_json'
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'webmock'
 end

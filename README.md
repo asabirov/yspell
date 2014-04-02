@@ -1,12 +1,13 @@
-# Spellcheck
+# SpellChecker
 
-TODO: Write a gem description
+Simple client for api.yandex.ru/speller
+
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'spellcheck'
+    gem 'spell_check', 'git' => 'github.com:asabirov/spell_checker.git'
 
 And then execute:
 
@@ -14,15 +15,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install spellcheck
+    $ gem install spell_check
 
 ## Usage
 
-TODO: Write usage instructions here
+require 'spell_checker'
+
+client = SpellChecker::Client.new
+client.check('some text for check', lang: 'en')
+
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/spellcheck/fork )
+1. Fork it ( http://github.com/asabirov/spell_check/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
