@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'spellchecker'
+
+SpellChecker.new.run
