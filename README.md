@@ -34,9 +34,11 @@ Use options when calling check method:
     client.check('some text for check', options)
 
 
-| lang      | ru, uk, or en  |
+| Key     | Description |
+| ------- |-----------|
+| lang    | ru, uk, or en  |
 | options | http://api.yandex.ru/speller/doc/dg/reference/speller-options.xml |
-| format | plain or html  (default is plain) |
+| format  | plain or html  (default is plain) |
 
 ## Contributing
 
