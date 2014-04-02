@@ -8,14 +8,15 @@ module SpellChecker
 
     API_PATH_MULTIPLE_MULTIPLE = 'http://speller.yandex.net/services/spellservice.json/checkTexts'
 
-    def check(text)
-      request(text)
+    def check(text, options = {})
+      params = options.merge('text' => text)
+      request(params)
     end
 
 
-    def request(text)
+    def request(params)
       http = HTTPClient.new
-      raw_response = http.post(API_PATH_SINGLE_CHECK, "text" => text)
+      raw_response = http.post(API_PATH_SINGLE_CHECK, params)
 
       response = MultiJson.load(raw_response.body).first
 

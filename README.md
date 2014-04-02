@@ -1,3 +1,5 @@
+WIP
+
 # SpellChecker
 
 Simple client for api.yandex.ru/speller
@@ -19,11 +21,22 @@ Or install it yourself as:
 
 ## Usage
 
-require 'spell_checker'
+    require 'spell_checker'
 
-client = SpellChecker::Client.new
-client.check('some text for check', lang: 'en')
+    client = SpellChecker::Client.new
+    client.check('some text for check', lang: 'en')
 
+
+## Options
+
+Use options when calling check method:
+
+    client.check('some text for check', options)
+
+
+| lang      | ru, uk, or en  |
+| options | http://api.yandex.ru/speller/doc/dg/reference/speller-options.xml |
+| format | plain or html  (default is plain) |
 
 ## Contributing
 
