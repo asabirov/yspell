@@ -1,3 +1,5 @@
+WIP
+
 # SpellChecker
 
 Simple client for api.yandex.ru/speller
