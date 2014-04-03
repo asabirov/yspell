@@ -18,9 +18,11 @@ module SpellChecker
       http = HTTPClient.new
       raw_response = http.post(API_PATH_SINGLE_CHECK, params)
 
-      response = MultiJson.load(raw_response.body).first
+      results = MultiJson.load(raw_response.body)
 
-      Container.new(response)
+      results.map do |result|
+        SpellError.from_result(result)
+      end
     end
   end
 end

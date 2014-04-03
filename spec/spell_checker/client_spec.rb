@@ -5,31 +5,46 @@ describe SpellChecker::Client do
   include WebHelpers
 
   let(:client) { described_class.new }
-  let(:russian_text) do
-    'Какой-то текст с ошбками'
+  let(:result) { client.check(text).first }
+
+  before do
+    WebMock.disable!
   end
 
-  context '' do
 
-  end
-
-  context 'русский' do
-    before do
-      stub_response(russian_text, '[{"code":1, "pos":17, "row":0, "col":17, "len":7, "word":"ошбками", "s":["ошибками"]}]')
-    end
-
-    let(:result) { client.check(russian_text)}
+  context 'russian' do
+    let(:text) { File.read('spec/fixtures/russian.txt') }
 
     it 'returns Container' do
-      client.check(russian_text).should be_a(SpellChecker::Container)
+      client.check(text).first.should be_a(SpellChecker::SpellError::UnknownWord)
     end
 
-    specify { result.code.should == 1 }
-    specify { result.error.should be_a(SpellChecker::SpellError::UnknownWord) }
-    specify { result.pos.should == 17 }
-    specify { result.row.should == 0 }
-    specify { result.col.should == 17 }
-    specify { result.len.should == 7 }
-    specify { result.s.should == ['ошибками'] }
+    it 'returns correct errors' do
+      result.code.should == 1
+      result.position.should == 0
+      result.row.should == 0
+      result.column.should == 0
+      result.length.should == 4
+      result.word.should == 'Кога'
+      result.tip.should == ['Когда', 'Кока', 'Кого', 'Гога']
+    end
+  end
+
+  context 'english' do
+    let(:text) { File.read('spec/fixtures/english.txt') }
+
+    it 'returns Container' do
+      client.check(text).first.should be_a(SpellChecker::SpellError::UnknownWord)
+    end
+
+    it 'returns correct errors' do
+      result.code.should == 1
+      result.position.should == 33
+      result.row.should == 0
+      result.column.should == 33
+      result.length.should == 6
+      result.word.should == 'hapens'
+      result.tip.should == ['happens']
+    end
   end
 end

@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'spell_checker'
+$:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
 
-SpellChecker.new.run
+require 'spell_checker'
+require 'spell_checker/cli/application'
+
+SpellChecker::CLI::Application.new.run(ARGV.dup)
