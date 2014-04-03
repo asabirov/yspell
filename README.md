@@ -19,10 +19,24 @@ Or install it yourself as:
 
 ## Usage
 
+As ruby library
+
     require 'spell_checker'
 
     client = SpellChecker::Client.new
     client.check('some text for check', lang: 'en')
+
+
+As command line tool
+
+    Usage: spell_checker FILE [OPTIONS]
+    Options
+        -l, --language ENVIRONMENT       text language
+        -f, --format FORMAT              file format (html or plain)
+        -m, --mode MODE                  Delay N seconds before executing
+        -i, --inline-suggestions         show suggestions after errors
+        -v, --verbose                    Run verbosely
+        -h, --help                       help
 
 
 ## Options

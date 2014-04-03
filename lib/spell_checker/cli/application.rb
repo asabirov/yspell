@@ -48,7 +48,7 @@ module SpellChecker
             options[:mode] = mode
           end
 
-          opt.on('-i','--inline-suggestions', String, 'text language') do
+          opt.on('-i','--inline-suggestions', String, 'show suggestions after errors') do
             options[:inline_suggestions] = true
           end
 
