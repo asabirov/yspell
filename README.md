@@ -1,5 +1,3 @@
-WIP
-
 # SpellChecker
 
 Simple client for api.yandex.ru/speller
@@ -35,14 +33,14 @@ Use options when calling check method:
 
 
 | Key     | Description |
-| ------- |-----------|
-| lang    | ru, uk, or en  |
-| options | http://api.yandex.ru/speller/doc/dg/reference/speller-options.xml |
-| format  | plain or html  (default is plain) |
+| ------- |-------------|
+| lang    | Text language (ru, uk, or en)|
+| options | Value from 0 to 5, for more information, see http://api.yandex.ru/speller/doc/dg/reference/speller-options.xml  |
+| format  | plain or html  (plain is default) |
 
 ## Contributing
 
-1. Fork it ( http://github.com/asabirov/spell_check/fork )
+1. Fork it ( http://github.com/asabirov/spell_checker/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
