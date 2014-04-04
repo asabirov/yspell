@@ -26,19 +26,24 @@ As ruby library
     require 'spell_checker'
 
     client = SpellChecker::Client.new
-    client.check('some text for check', lang: 'en')
+    client.check('some text for check')
 
 
 As command line tool
 
-    Usage: spell_checker FILE [OPTIONS]
+    Usage: spell-check TEXT [OPTIONS]
     Options
-        -l, --language ENVIRONMENT       text language
+            --file FILE                  path to file
+        -l, --language LANG              separated list of languages
+                                         Available: ru, en or uk (default is "ru, en")
         -f, --format FORMAT              file format (html or plain)
-        -m, --mode MODE                  Delay N seconds before executing
-        -i, --inline-suggestions         show suggestions after errors
+        -m, --mode MODE                  Yandex Spell mode
+                                         for more information, see http://api.yandex.ru/speller/doc/dg/reference/speller-options.xml
+        -s, --suggestions POSITION       show suggestions after errors
+                                         inline, after_text, none
         -v, --verbose                    Run verbosely
         -h, --help                       help
+
 
 
 ## Options
@@ -50,9 +55,9 @@ Use options when calling check method:
 
 | Key     | Description |
 | ------- |-------------|
-| lang    | Text language (ru, uk, or en)|
+| lang    | List of languages. Supported ru, en, uk (default is "ru,en")|
 | options | Value from 0 to 5, for more information, see http://api.yandex.ru/speller/doc/dg/reference/speller-options.xml  |
-| format  | plain or html  (plain is default) |
+| format  | Format of text. Supported plain and html (default is plain) |
 
 ## Contributing
 

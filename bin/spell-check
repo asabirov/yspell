@@ -2,7 +2,7 @@
 
 $:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
 
-require 'spell_checker'
+require 'spell-check'
 require 'spell_checker/cli/application'
 
 SpellChecker::CLI::Application.new.run(ARGV.dup)
