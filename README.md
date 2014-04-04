@@ -45,12 +45,11 @@ As ruby library
     require 'yspell'
 
     client = YSpell::Client.new
-    client.check('sme text for check')
+    client.check('sme text for chck')
 
     >> [
-        #<YSpell::SpellError::UnknownWord:0x007ff9ba4cac00 @position=33, @row=0, @column=33, @length=6, @word="hapens", @suggestions=["happens"], @code=1>,
-        #<YSpell::SpellError::UnknownWord:0x007ff9ba4caa48 @position=46, @row=1, @column=4, @length=9, @word="samething", @suggestions=["something"], @code=1>,
-        #<YSpell::SpellError::UnknownWord:0x007ff9ba4ca868 @position=142, @row=2, @column=51, @length=9, @word="hon-estly", @suggestions=["honestly"], @code=1>
+        #<YSpell::SpellError::UnknownWord:0x007f92a9156a38 @position=0, @row=0, @column=0, @length=3, @word="sme", @suggestions=["some", "me"], @code=1>,
+        #<YSpell::SpellError::UnknownWord:0x007f92a9156808 @position=13, @row=0, @column=13, @length=4, @word="chck", @suggestions=["check", "chick", "chuck"], @code=1>
     ]
 
 
