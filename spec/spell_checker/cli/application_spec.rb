@@ -1,8 +1,8 @@
 # coding: utf-8
 require 'spec_helper'
-require 'spell_checker/cli/application'
+require 'y_spell/cli/application'
 
-describe SpellChecker::CLI::Application do
+describe YSpell::CLI::Application do
   include WebHelpers
   let(:stdout) { StringIO.new }
   let(:cli) { described_class.new(stdout) }

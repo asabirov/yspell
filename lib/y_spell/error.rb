@@ -1,7 +1,7 @@
 require 'httpclient'
 require 'multi_json'
 
-module SpellChecker
+module YSpell
   class Error < StandardError
   end
 

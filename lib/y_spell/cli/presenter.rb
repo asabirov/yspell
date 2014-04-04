@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'rainbow'
 
-module SpellChecker
+module YSpell
   module CLI
     class Presenter
       require 'rainbow/ext/string'

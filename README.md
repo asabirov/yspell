@@ -1,15 +1,15 @@
 WIP
 
-# SpellChecker
+# YSpell
 
-Simple client for api.yandex.ru/speller
+Spell checker library and command-line tool. It uses Yandex Speller API (http://api.yandex.ru/speller/doc/dg/concepts/speller-overview.xml).
 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'spell_check', 'git' => 'github.com:asabirov/spell_checker.git'
+    gem 'yspell', 'git' => 'github.com:asabirov/yspell.git'
 
 And then execute:
 
@@ -17,21 +17,21 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install spell_check
+    $ gem install yspell
 
 ## Usage
 
 As ruby library
 
-    require 'spell_checker'
+    require 'yspell'
 
-    client = SpellChecker::Client.new
+    client = YSpell::Client.new
     client.check('some text for check')
 
 
 As command line tool
 
-    Usage: spell-check TEXT [OPTIONS]
+    Usage: yspell TEXT [OPTIONS]
     Options
             --file FILE                  path to file
         -l, --language LANG              separated list of languages
@@ -61,7 +61,7 @@ Use options when calling check method:
 
 ## Contributing
 
-1. Fork it ( http://github.com/asabirov/spell_checker/fork )
+1. Fork it ( http://github.com/asabirov/yspell/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

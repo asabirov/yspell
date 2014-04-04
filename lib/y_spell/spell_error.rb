@@ -1,7 +1,7 @@
 require 'httpclient'
 require 'multi_json'
 
-module SpellChecker
+module YSpell
   class SpellError
     class UnknownWord < SpellError
       COLOR = :red

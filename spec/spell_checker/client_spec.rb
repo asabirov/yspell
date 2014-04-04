@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'spec_helper'
 
-describe SpellChecker::Client do
+describe YSpell::Client do
   include WebHelpers
 
   let(:client) { described_class.new }
@@ -16,7 +16,7 @@ describe SpellChecker::Client do
     let(:text) { File.read('spec/fixtures/russian.txt') }
 
     it 'returns Container' do
-      client.check(text).first.should be_a(SpellChecker::SpellError::UnknownWord)
+      client.check(text).first.should be_a(YSpell::SpellError::UnknownWord)
     end
 
     it 'returns correct errors' do
@@ -34,7 +34,7 @@ describe SpellChecker::Client do
     let(:text) { File.read('spec/fixtures/english.txt') }
 
     it 'returns Container' do
-      client.check(text).first.should be_a(SpellChecker::SpellError::UnknownWord)
+      client.check(text).first.should be_a(YSpell::SpellError::UnknownWord)
     end
 
     it 'returns correct errors' do

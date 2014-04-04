@@ -1,9 +1,9 @@
 # coding: utf-8
 require 'optparse'
-require 'spell_checker/cli/presenter'
 require 'ostruct'
+require 'y_spell/cli/presenter'
 
-module SpellChecker
+module YSpell
   module CLI
     class Application
       def initialize(out = STDOUT, err = STDERR)

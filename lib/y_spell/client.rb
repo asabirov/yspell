@@ -1,7 +1,7 @@
 require 'httpclient'
 require 'multi_json'
 
-module SpellChecker
+module YSpell
   class Client
 
     API_PATH_SINGLE_CHECK = 'http://speller.yandex.net/services/spellservice.json/checkText'
