@@ -2,7 +2,7 @@
 
 $:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
 
-require 'y_spell'
-require 'y_spell/cli/application'
+require 'yspell'
+require 'yspell/cli/application'
 
 YSpell::CLI::Application.new.run(ARGV.dup)

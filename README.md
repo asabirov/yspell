@@ -45,7 +45,7 @@ As ruby library
     require 'yspell'
 
     client = YSpell::Client.new
-    client.check('some text for check')
+    client.check('sme text for check')
 
     >> [
         #<YSpell::SpellError::UnknownWord:0x007ff9ba4cac00 @position=33, @row=0, @column=33, @length=6, @word="hapens", @suggestions=["happens"], @code=1>,

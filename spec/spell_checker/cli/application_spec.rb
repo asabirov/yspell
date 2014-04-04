@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'spec_helper'
-require 'y_spell/cli/application'
+require 'yspell/cli/application'
 
 describe YSpell::CLI::Application do
   include WebHelpers

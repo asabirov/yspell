@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'optparse'
 require 'ostruct'
-require 'y_spell/cli/presenter'
+require 'yspell/cli/presenter'
 
 module YSpell
   module CLI
