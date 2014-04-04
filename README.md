@@ -9,6 +9,10 @@ Spell checker library and command-line tool. It uses Yandex Speller API (http://
 
 Add this line to your application's Gemfile:
 
+    gem 'yspell'
+
+If you want use the latest code from github
+
     gem 'yspell', 'git' => 'github.com:asabirov/yspell.git'
 
 And then execute:
