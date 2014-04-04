@@ -45,7 +45,7 @@ module YSpell
       def parse_options(argv)
         options = {}
         opt_parser = OptionParser.new do |opt|
-          opt.banner = 'Usage: spell-check TEXT [OPTIONS]'
+          opt.banner = 'Usage: yspell TEXT [OPTIONS]'
           opt.separator  'Options'
           options = OpenStruct.new
           options.suggestions = :inline
