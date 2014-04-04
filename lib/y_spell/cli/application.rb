@@ -54,11 +54,11 @@ module YSpell
             options.file = file
           end
 
-          opt.on('-l LANG','--language LANG', [:ru, :uk, :en], 'separated list of languages', 'Available: ru, en or uk (default is "ru, en")') do |language|
+          opt.on('-l LANG','--language LANG', [:ru, :uk, :en], 'Comma-separated list of languages', 'Available languages: ru, en or uk (default is "ru, en")') do |language|
             options.language = language
           end
 
-          opt.on('-f FORMAT','--format FORMAT', String, 'file format (html or plain)') do |format|
+          opt.on('-f FORMAT','--format FORMAT', String, 'File format (html or plain)') do |format|
             options.format = format
           end
 
@@ -66,7 +66,7 @@ module YSpell
             options.mode = mode
           end
 
-          opt.on('-s','--suggestions POSITION', [:inline, :after, :none], 'show suggestions after errors', 'inline, after_text, none') do |mode|
+          opt.on('-s','--suggestions POSITION', [:inline, :after, :none], 'Show suggestions after errors', 'inline, after_text, none') do |mode|
             options.suggestions = true
           end
 
@@ -75,7 +75,7 @@ module YSpell
             options.verbose = v
           end
 
-          opt.on_tail('-h','--help','help') do
+          opt.on_tail('-h','--help','Help') do
             presenter.puts opt_parser
             return
           end
