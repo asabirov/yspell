@@ -25,14 +25,6 @@ Or install it yourself as:
 
 ## Usage
 
-As ruby library
-
-    require 'yspell'
-
-    client = YSpell::Client.new
-    client.check('some text for check')
-
-
 As command line tool
 
     Usage: yspell TEXT [OPTIONS]
@@ -47,6 +39,19 @@ As command line tool
                                          inline, after_text, none
         -v, --verbose                    Run verbosely
         -h, --help                       Help
+
+As ruby library
+
+    require 'yspell'
+
+    client = YSpell::Client.new
+    client.check('some text for check')
+
+    >> [
+        #<YSpell::SpellError::UnknownWord:0x007ff9ba4cac00 @position=33, @row=0, @column=33, @length=6, @word="hapens", @suggestions=["happens"], @code=1>,
+        #<YSpell::SpellError::UnknownWord:0x007ff9ba4caa48 @position=46, @row=1, @column=4, @length=9, @word="samething", @suggestions=["something"], @code=1>,
+        #<YSpell::SpellError::UnknownWord:0x007ff9ba4ca868 @position=142, @row=2, @column=51, @length=9, @word="hon-estly", @suggestions=["honestly"], @code=1>
+    ]
 
 
 

@@ -13,7 +13,7 @@ describe YSpell::CLI::Application do
     it 'returns instructions' do
       cli.run(argv)
       stdout.rewind
-      stdout.read.should include('Usage: spell-check TEXT [OPTIONS]')
+      stdout.read.should include('Usage: yspell TEXT [OPTIONS]')
     end
   end
 
