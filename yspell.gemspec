@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sladecj@gmail.com"]
   spec.summary       = "Command line spell checker"
   spec.description   = "It uses yandex speller api and supported languages ru, en and uk"
-  spec.homepage      = "https://github.com/asabirov/yspell"
+  spec.homepage      = "https://artursabirov.ru"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
