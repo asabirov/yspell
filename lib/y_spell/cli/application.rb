@@ -50,7 +50,7 @@ module YSpell
           options = OpenStruct.new
           options.suggestions = :inline
 
-          opt.on('-f FILE','--file FILE', String, 'path to file') do |file|
+          opt.on('-F FILE','--file FILE', String, 'path to file') do |file|
             options.file = file
           end
 

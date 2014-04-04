@@ -37,16 +37,16 @@ As command line tool
 
     Usage: yspell TEXT [OPTIONS]
     Options
-            --file FILE                  path to file
-        -l, --language LANG              separated list of languages
-                                         Available: ru, en or uk (default is "ru, en")
-        -f, --format FORMAT              file format (html or plain)
+        -F, --file FILE                  path to file
+        -l, --language LANG              Comma-separated list of languages
+                                         Available languages: ru, en or uk (default is "ru, en")
+        -f, --format FORMAT              File format (html or plain)
         -m, --mode MODE                  Yandex Spell mode
                                          for more information, see http://api.yandex.ru/speller/doc/dg/reference/speller-options.xml
-        -s, --suggestions POSITION       show suggestions after errors
+        -s, --suggestions POSITION       Show suggestions after errors
                                          inline, after_text, none
         -v, --verbose                    Run verbosely
-        -h, --help                       help
+        -h, --help                       Help
 
 
 
