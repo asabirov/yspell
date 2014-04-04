@@ -18,7 +18,7 @@ module SpellChecker
 
     #COLOR = :red
 
-    attr_reader :code, :position, :row, :column, :length, :word, :tip
+    attr_reader :code, :position, :row, :column, :length, :word, :suggestions
 
     CODE_TO_ERROR = [UnknownWord, RepeatedWord, Capitalization, TooManyErrors]
 
@@ -39,7 +39,7 @@ module SpellChecker
       @column = result['col']
       @length = result['len']
       @word = result['word']
-      @tip = result['s']
+      @suggestions = result['s']
       @code = result['code']
     end
 

@@ -6,41 +6,57 @@ module SpellChecker
     class Presenter
       require 'rainbow/ext/string'
 
-      def initialize(text, spell_errors, options)
-        @text = text
-        @errors = spell_errors
-        @options = options
+      def initialize(out, err)
+        @out = out
+        @err = err
+        @verbose = false
       end
 
-      def draw(out)
-        if @errors.empty?
-          out.puts @text
+      def draw(text, spell_errors, options)
+        @verbose = options.verbose
 
-          out.puts
-          out.puts "It seems ok!".color(:green)
+        if spell_errors.empty?
+          @out.puts text
+          @out.puts
+          @out.puts "It seems ok!".color(:green)
           return
         end
 
-        highlight_errors(out)
-        print_suggestions(out)
+        highlight_errors(text, spell_errors, options)
+
+        if options.suggestions == :after
+          print_suggestions(spell_errors)
+        end
+      end
+
+      def puts(text)
+        @out.puts text
+      end
+
+      def error(text)
+        @err.puts text.color(:red)
+      end
+
+      def info(msg)
+        @out.puts(msg) if @verbose
       end
 
       private
 
-      def highlight_errors(out)
+      def highlight_errors(text, errors, options)
         row = 0
-        @text.each_line do |line|
-          row_errors = @errors.select{|err| err.row == row}.sort_by{|err| err.position}.reverse
-          out.puts print_text_with_highlights(line, row_errors)
+        text.each_line do |line|
+          row_errors = errors.select{|err| err.row == row}.sort_by{|err| err.position}.reverse
+          @out.puts print_text_with_highlights(line, row_errors, options)
           row = row + 1
         end
       end
 
-      def print_text_with_highlights(string, errors)
+      def print_text_with_highlights(string, errors, options)
         errors.each do |error|
           replace_with = error.colored_word
-          if @options[:inline_suggestions]
-            replace_with << " (#{error.tip.join(', ')}?)".color(:yellow)
+          if options.suggestions == :inline
+            replace_with << " (#{error.suggestions.join(', ')}?)".color(:yellow)
           end
 
           string[error.column...(error.column + error.length)] = replace_with
@@ -48,11 +64,10 @@ module SpellChecker
         string
       end
 
-      def print_suggestions(out)
-        return if @options[:inline_suggestions]
-        out.puts
-        @errors.each do |error|
-          out.puts "#{error.word} — #{error.tip.join(', ')}".color(:yellow)
+      def print_suggestions(errors)
+        @out.puts
+        errors.each do |error|
+          @out.puts "#{error.word} — #{error.suggestions.join(', ')}".color(:yellow)
         end
       end
     end

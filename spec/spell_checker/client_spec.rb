@@ -26,7 +26,7 @@ describe SpellChecker::Client do
       result.column.should == 0
       result.length.should == 4
       result.word.should == 'Кога'
-      result.tip.should == ['Когда', 'Кока', 'Кого', 'Гога']
+      result.suggestions.should == ['Когда', 'Кока', 'Кого', 'Гога']
     end
   end
 
@@ -44,7 +44,7 @@ describe SpellChecker::Client do
       result.column.should == 33
       result.length.should == 6
       result.word.should == 'hapens'
-      result.tip.should == ['happens']
+      result.suggestions.should == ['happens']
     end
   end
 end
